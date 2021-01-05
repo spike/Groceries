@@ -1,9 +1,11 @@
-package io.grocerieslist.groceries.data
+package io.grocerieslist.groceries.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
+import io.grocerieslist.groceries.data.ItemDatabase
+import io.grocerieslist.groceries.data.ItemRepository
 import io.grocerieslist.groceries.model.Item
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

@@ -11,7 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import io.grocerieslist.groceries.R
 import io.grocerieslist.groceries.model.Item
-import io.grocerieslist.groceries.data.ItemViewModel
+import io.grocerieslist.groceries.viewmodel.ItemViewModel
 import kotlinx.android.synthetic.main.fragment_add.*
 import kotlinx.android.synthetic.main.fragment_add.view.*
 

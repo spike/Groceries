@@ -10,7 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import io.grocerieslist.groceries.R
-import io.grocerieslist.groceries.data.ItemViewModel
+import io.grocerieslist.groceries.viewmodel.ItemViewModel
 import kotlinx.android.synthetic.main.fragment_list.view.*
 
 class ListFragment : Fragment() {
