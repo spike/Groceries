@@ -1,4 +1,4 @@
-package io.grocerieslist.groceries.data
+package io.grocerieslist.groceries.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

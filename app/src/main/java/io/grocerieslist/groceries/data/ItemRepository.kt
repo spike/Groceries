@@ -1,6 +1,7 @@
 package io.grocerieslist.groceries.data
 
 import androidx.lifecycle.LiveData
+import io.grocerieslist.groceries.model.Item
 
 class ItemRepository(private val itemDao: ItemDao) {
 
