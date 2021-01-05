@@ -8,6 +8,6 @@ data class Item(
     @PrimaryKey(autoGenerate = true)
     val id: Int,
     val name: String,
-    val quantity: Int,
+    val quantity: Double,
    // val quantityMeasurement: String,
 )

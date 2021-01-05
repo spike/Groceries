@@ -14,6 +14,7 @@ import io.grocerieslist.groceries.model.Item
 import io.grocerieslist.groceries.viewmodel.ItemViewModel
 import kotlinx.android.synthetic.main.fragment_add.*
 import kotlinx.android.synthetic.main.fragment_add.view.*
+import java.lang.Double.parseDouble
 
 class AddFragment : Fragment() {
     private lateinit var mItemViewModel: ItemViewModel
@@ -39,7 +40,7 @@ class AddFragment : Fragment() {
         val quantity = add_quantity_input.text.toString()
 
         if (inputCheck(item, quantity)) {
-            val item = Item( 0, item, Integer.parseInt(quantity.toString()))
+            val item = Item( 0, item, parseDouble(quantity.toString()))
 
             mItemViewModel.addItem(item)
             Toast.makeText(requireContext(), "Successfully added!", Toast.LENGTH_LONG).show()
