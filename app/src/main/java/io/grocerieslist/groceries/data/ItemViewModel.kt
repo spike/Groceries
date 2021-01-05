@@ -8,7 +8,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class ItemViewModel(application: Application): AndroidViewModel (application) {
-    private val readAllData: LiveData<List<Item>>
+    val readAllData: LiveData<List<Item>>
     private val repository: ItemRepository
 
     init {
