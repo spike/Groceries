@@ -7,7 +7,7 @@
     tools:context=".fragments.add.AddFragment">
 
     <EditText
-        android:id="@+id/itemForm"
+        android:id="@+id/add_item_input"
         android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/quantityForm"
+        android:id="@+id/add_quantity_input"
         android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -28,10 +28,10 @@
         android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/itemForm" />
+        app:layout_constraintTop_toBottomOf="@+id/add_item_input" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/add_button"
         android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -39,5 +39,5 @@
         android:text="Add"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quantityForm" />
+        app:layout_constraintTop_toBottomOf="@+id/add_quantity_input" />
 </androidx.constraintlayout.widget.ConstraintLayout>
