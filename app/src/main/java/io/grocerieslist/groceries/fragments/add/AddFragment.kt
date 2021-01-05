@@ -38,9 +38,10 @@ class AddFragment : Fragment() {
     private fun insertDataToDatabase() {
         val item = add_item_input.text.toString()
         val quantity = add_quantity_input.text.toString()
+        val unit = add_unit_input.text.toString()
 
         if (inputCheck(item, quantity)) {
-            val item = Item( 0, item, parseDouble(quantity.toString()))
+            val item = Item( 0, item, parseDouble(quantity.toString()), unit)
 
             mItemViewModel.addItem(item)
             Toast.makeText(requireContext(), "Successfully added!", Toast.LENGTH_LONG).show()

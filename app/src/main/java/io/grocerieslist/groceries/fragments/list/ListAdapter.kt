@@ -24,11 +24,16 @@ class ListAdapter: RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
         return itemList.size
     }
 
+    private fun removeTrailingZeros(number: String): String {
+        return number.replace("[0]*$".toRegex(), "").replace("\\.$".toRegex(), "")
+    }
+
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentItem = itemList[position]
-       // holder.itemView.id_view.text = currentItem.id.toString()
+       // holder.itemView.unit_view.text = currentItem.unit.toString()
         holder.itemView.item_view.text = currentItem.name.toString()
-        holder.itemView.quantity_view.text = currentItem.quantity.toString()
+        holder.itemView.quantity_view.text = removeTrailingZeros(currentItem.quantity.toString())
+
     }
     fun setData(item: List<Item>) {
         this.itemList = item
