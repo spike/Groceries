@@ -31,13 +31,16 @@ class UpdateFragment : Fragment() {
 
         view.update_item_input.setText(args.currentItem.name)
         view.update_unit_input.setText(args.currentItem.unit)
-        view.update_quantity_input.setText(args.currentItem.quantity.toString())
+        view.update_quantity_input.setText(removeTrailingZeros(args.currentItem.quantity.toString()))
 
         view.update_button.setOnClickListener {
             updateItem()
         }
 
         return view
+    }
+    private fun removeTrailingZeros(number: String): String {
+        return number.replace("[0]*$".toRegex(), "").replace("\\.$".toRegex(), "")
     }
 
     private fun updateItem() {
