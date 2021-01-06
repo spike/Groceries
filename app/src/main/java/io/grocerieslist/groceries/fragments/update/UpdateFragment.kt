@@ -49,7 +49,7 @@ class UpdateFragment : Fragment() {
             val updatedItem = Item(args.currentItem.id, itemName, itemQuantity, itemUnit)
             mItemViewModel.updateItem(updatedItem)
             Toast.makeText(requireContext(), "Successfully updated", Toast.LENGTH_LONG).show()
-            findNavController().navigate(R.id.action_addFragment_to_listFragment)
+            findNavController().navigate(R.id.action_updateFragment_to_listFragment)
         } else {
             Toast.makeText(requireContext(), "Please fill out both the item name and quantity", Toast.LENGTH_LONG).show()
         }
