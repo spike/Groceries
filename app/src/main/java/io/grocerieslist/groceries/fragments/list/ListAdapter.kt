@@ -3,6 +3,7 @@ package io.grocerieslist.groceries.fragments.list
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import io.grocerieslist.groceries.R
 import io.grocerieslist.groceries.model.Item
@@ -34,6 +35,11 @@ class ListAdapter: RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
         holder.itemView.item_view.text = currentItem.name
         holder.itemView.quantity_view.text = removeTrailingZeros(currentItem.quantity.toString())
 
+        holder.itemView.rowLayout.setOnClickListener{
+            val action = ListFragmentDirections.actionListFragmentToUpdateFragment(currentItem)
+            holder.itemView.findNavController().navigate(action)
+
+        }
     }
     fun setData(item: List<Item>) {
         this.itemList = item
