@@ -30,8 +30,8 @@ class ListAdapter: RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentItem = itemList[position]
-       // holder.itemView.unit_view.text = currentItem.unit.toString()
-        holder.itemView.item_view.text = currentItem.name.toString()
+        holder.itemView.unit_view.text = currentItem.unit
+        holder.itemView.item_view.text = currentItem.name
         holder.itemView.quantity_view.text = removeTrailingZeros(currentItem.quantity.toString())
 
     }

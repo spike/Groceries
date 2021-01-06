@@ -1,4 +1,4 @@
-package io.grocerieslist.groceries.fragments.repository
+package io.grocerieslist.groceries.repository
 
 import androidx.lifecycle.LiveData
 import io.grocerieslist.groceries.data.ItemDao
