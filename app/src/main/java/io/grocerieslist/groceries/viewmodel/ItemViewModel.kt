@@ -25,4 +25,10 @@ class ItemViewModel(application: Application): AndroidViewModel (application) {
             repository.addItem(item)
         }
     }
+
+    fun updateItem(item: Item){
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.updateItem(item)
+        }
+    }
 }

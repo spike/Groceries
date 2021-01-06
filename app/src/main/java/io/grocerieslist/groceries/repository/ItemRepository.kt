@@ -11,4 +11,9 @@ class ItemRepository(private val itemDao: ItemDao) {
     suspend fun addItem(item: Item) {
         itemDao.addItem(item)
     }
+
+    suspend fun updateItem(item: Item) {
+        itemDao.updateItem(item)
+    }
+
 }
