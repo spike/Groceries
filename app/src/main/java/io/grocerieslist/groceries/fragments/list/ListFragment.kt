@@ -1,6 +1,6 @@
 package io.grocerieslist.groceries.fragments.list
 
-import android.app.AlertDialog
+import androidx.appcompat.app.AlertDialog
 import android.os.Bundle
 import android.view.*
 import android.widget.Toast
