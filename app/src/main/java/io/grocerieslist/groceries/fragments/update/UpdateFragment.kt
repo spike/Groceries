@@ -68,12 +68,12 @@ class UpdateFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if(item.itemId == R.id.menu_delete) {
-            deleteUser()
+            deleteItem()
         }
         return super.onOptionsItemSelected(item)
     }
 
-    private fun deleteUser() {
+    private fun deleteItem() {
         val builder = AlertDialog.Builder(requireContext())
         builder.setPositiveButton("Yes") { _, _ ->
             mItemViewModel.deleteItem(args.currentItem)
