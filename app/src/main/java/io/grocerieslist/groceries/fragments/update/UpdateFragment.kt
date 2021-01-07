@@ -6,6 +6,8 @@ import android.text.TextUtils
 import android.view.*
 import androidx.fragment.app.Fragment
 import android.widget.Toast
+import androidx.core.content.ContextCompat
+import androidx.core.graphics.drawable.DrawableCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -36,6 +38,7 @@ class UpdateFragment : Fragment() {
             updateItem()
         }
         setHasOptionsMenu(true)
+
 
         return view
     }
