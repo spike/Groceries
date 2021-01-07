@@ -1,11 +1,10 @@
 package io.grocerieslist.groceries.fragments.update
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.text.TextUtils
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -36,6 +35,7 @@ class UpdateFragment : Fragment() {
         view.update_button.setOnClickListener {
             updateItem()
         }
+        setHasOptionsMenu(true)
 
         return view
     }
@@ -60,6 +60,31 @@ class UpdateFragment : Fragment() {
 
     private fun inputCheck(item: String, quantity: String): Boolean {
         return !(TextUtils.isEmpty(item) && TextUtils.isEmpty(quantity))
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.delete_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(item.itemId == R.id.menu_delete) {
+            deleteUser()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun deleteUser() {
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setPositiveButton("Yes") { _, _ ->
+            mItemViewModel.deleteItem(args.currentItem)
+            Toast.makeText(requireContext(), "${args.currentItem.name} successfully deleted!", Toast.LENGTH_LONG).show()
+        }
+        builder.setNegativeButton("No") { _, _ ->
+            Toast.makeText(requireContext(), "Nothing was deleted", Toast.LENGTH_LONG).show()
+        }
+        builder.setTitle("Delete ${args.currentItem.name}")
+        builder.setMessage("Are you sure you want to delete ${args.currentItem.name}?")
+        builder.create().show()
     }
 
 }

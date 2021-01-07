@@ -16,4 +16,13 @@ class ItemRepository(private val itemDao: ItemDao) {
         itemDao.updateItem(item)
     }
 
+    suspend fun deleteItem(item: Item) {
+        itemDao.deleteItem(item)
+    }
+
+    suspend fun deleteAllItems() {
+        itemDao.deleteAllItems()
+    }
+
+
 }
