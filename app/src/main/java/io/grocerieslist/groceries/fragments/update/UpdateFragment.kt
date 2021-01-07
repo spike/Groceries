@@ -78,6 +78,7 @@ class UpdateFragment : Fragment() {
         builder.setPositiveButton("Yes") { _, _ ->
             mItemViewModel.deleteItem(args.currentItem)
             Toast.makeText(requireContext(), "${args.currentItem.name} successfully deleted!", Toast.LENGTH_LONG).show()
+            findNavController().navigate(R.id.action_updateFragment_to_listFragment)
         }
         builder.setNegativeButton("No") { _, _ ->
             Toast.makeText(requireContext(), "Nothing was deleted", Toast.LENGTH_LONG).show()
